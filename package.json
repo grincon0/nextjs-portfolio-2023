@@ -18,7 +18,11 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-three-fiber": "^6.0.13",
+    "sass": "^1.62.0",
     "three": "^0.151.3",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "sass-loader": "^12.6.0"
   }
 }
