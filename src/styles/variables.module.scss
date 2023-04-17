@@ -1,0 +1,11 @@
+$jungle-bg-green: #64ff00;
+$jungle-bg-blue: #364990;
+$jungle-text-color: #439082;
+$jungle-highlight: #E360D4;
+
+:export {
+  jungleBgGreen: $jungle-bg-green;
+  jungleBgBlue: $jungle-bg-blue;
+  jungleTextColor: $jungle-text-color;
+  jungleHighlight:$jungle-highlight;
+}

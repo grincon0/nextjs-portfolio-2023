@@ -1,0 +1,20 @@
+.nav {
+  width: 100vw;
+  background: #132925;
+}
+
+.nav_list {
+  display: flex;
+  height: 55px;
+  align-items: center;
+}
+
+.nav_list li {
+  color: #E360D4;
+  list-style: none;
+  font-family: var(--font-mono);
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
