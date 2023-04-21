@@ -19,6 +19,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/navBar/navBar.jsx", "src/components/hero/hero.jsx", "src/components/canvas/Loader.jsx", "src/components/canvas/Computer.jsx"],
   "exclude": ["node_modules"]
 }

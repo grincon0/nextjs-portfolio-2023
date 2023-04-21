@@ -5,6 +5,21 @@
   z-index: -2;
 }
 
+.c_hero_text {
+  position: absolute;
+  margin-left: 8vw;
+  margin-top: -6vh;
+
+  h1 {
+    font-size: 6vw;
+  }
+
+  p {
+    font-size: 3vw;
+    width: 53%;
+  }
+}
+
 .hero {
   z-index: -2;
 }

@@ -2,6 +2,7 @@ import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "./Loader";
+import viewportDimensions from '@/helpers/getViewportDimensions'
 
 const Computers = ({ isMobile }) => {
   const computer = useGLTF("./assets/desktop_pc/scene.gltf");
@@ -28,6 +29,10 @@ const Computers = ({ isMobile }) => {
   );
 };
 
+const getViewportSizes = () => {
+  return viewportDimensions();
+}
+
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -39,9 +44,11 @@ const ComputersCanvas = () => {
     setIsMobile(mediaQuery.matches);
 
     // Define a callback function to handle changes to the media query
-    const handleMediaQueryChange = (event: { matches: boolean | ((prevState: boolean) => boolean); }) => {
+    const handleMediaQueryChange = (event) => {
       setIsMobile(event.matches);
     };
+
+    console.log(getViewportSizes())
 
     // Add the callback function as a listener for changes to the media query
     mediaQuery.addEventListener("change", handleMediaQueryChange);
@@ -59,6 +66,7 @@ const ComputersCanvas = () => {
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 30, near: 0.1, far: 1000 }}
       gl={{ preserveDrawingBuffer: true }}
+      style={{height: '600px', marginTop: '20vw', marginLeft: '20vw'}}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
