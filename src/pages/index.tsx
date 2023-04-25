@@ -6,6 +6,7 @@ import styles from '@/styles/Home.module.css'
 import NavBar from '@/components/navBar/navBar'
 import Hero from '@/components/hero/hero';
 import Projects from '@/components/section/Projects';
+import Work from '@/components/section/Work';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,6 +22,7 @@ export default function Home() {
       <NavBar />
       <main>
         <Hero />
+        <Work />
         <Projects />
       </main>
     </>
