@@ -8,8 +8,8 @@ export default function Projects() {
   return (
     <section className={`${styles.c_projects} ${additionalClasses}`}>
       <h1 className="section-title">Personal Projects</h1>
-      <p>I'm baby leggings ethical keffiyeh migas bodega boys. Celiac lumbersexual affogato deep v activated charcoal. Bespoke chambray tbh DIY, everyday carry hella pork belly twee plaid four loko pug. Palo santo pug godard cliche synth kogi tonx praxis austin deep v try-hard.</p>
-      <div className="c-flex flex-wrap">
+      <p className="section-info">I'm baby leggings ethical keffiyeh migas bodega boys. Celiac lumbersexual affogato deep v activated charcoal. Bespoke chambray tbh DIY, everyday carry hella pork belly twee plaid four loko pug. Palo santo pug godard cliche synth kogi tonx praxis austin deep v try-hard.</p>
+      <div className="c-flex flex-wrap center ">
         {projectData.content.map((el) => (<Card cardData={el} />))}
       </div>
     </section>

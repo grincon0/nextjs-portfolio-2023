@@ -56,8 +56,18 @@
   flex-wrap: wrap;
 }
 
+.center {
+  justify-content: center;
+}
+
 .section-title {
   font-size: 4vw;
+  padding: 25px 0 25px 50px;
+}
+
+.section-info {
+  max-width: 65%;
+  padding-left: 50px;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -13,24 +13,30 @@
   transform: perspective(500px);
   border-radius: 25px;
 
+  &:after {
+    content: "";
+    opacity: 0;
+    transition: opacity .4s;
+    background: linear-gradient(45deg,
+    #ff0000 0%, 
+    #ff9a00 10%,
+    #d0de21 20%,
+    #4fdc4a 30%, 
+    #3fdad8 40%,
+    #2fc9e2 50%, 
+    #1c7fee 60%, 
+    #5f15f2 70%, 
+    #ba0cf8 80%, 
+    #fb07d9 90%, 
+    #ff0000 100%  )
+    repeat 0% 0% / 300% 100%;
+  }
+
   &:hover,
   &:active {
 
     &:after {
-      content:"";
-      background: linear-gradient(45deg,
-      #ff0000 0%, 
-      #ff9a00 10%,
-      #d0de21 20%,
-      #4fdc4a 30%, 
-      #3fdad8 40%,
-      #2fc9e2 50%, 
-      #1c7fee 60%, 
-      #5f15f2 70%, 
-      #ba0cf8 80%, 
-      #fb07d9 90%, 
-      #ff0000 100%  )
-      repeat 0% 0% / 300% 100%;
+      opacity: 1;
       animation: rgb 6s linear infinite;
       will-change: background;
     }
@@ -38,19 +44,6 @@
 }
 
 .card::after {
-/*   background: linear-gradient(45deg,
-  #ff0000 0%, 
-  #ff9a00 10%,
-  #d0de21 20%,
-  #4fdc4a 30%, 
-  #3fdad8 40%,
-  #2fc9e2 50%, 
-  #1c7fee 60%, 
-  #5f15f2 70%, 
-  #ba0cf8 80%, 
-  #fb07d9 90%, 
-  #ff0000 100%  )
-  repeat 0% 0% / 300% 100%; */
   position: absolute;
   inset: -3px;
   border-radius: 16px;
@@ -64,12 +57,12 @@
 }
 
 .card_text {
-  font-size: 0.875;
+  font-size: 0.875rem;
   color: #a3a3a3;
 }
 
 .card_padding {
-  padding: 0 0 15px 15px;
+  padding: 15px;
 }
 
 .img_placeholder {
