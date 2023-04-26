@@ -1,14 +1,19 @@
 .c_hero {
   width: 100vw;
-  background: url("/hero.svg");
+  /* background: url("/hero.svg"); */
+/*   background: rgb(193,48,148);
+  background: linear-gradient(180deg, rgba(193,48,148,1) 0%, rgba(24,0,128,1) 90%); */
+  background: rgb(150,87,130);
+background: linear-gradient(180deg, rgba(150,87,130,1) 0%, rgba(24,0,128,1) 90%);
   background-size: cover;
   z-index: -2;
 }
 
 .c_hero_text {
-  position: absolute;
-  margin-left: 8vw;
-  margin-top: -6vh;
+  position: relative;
+  top: 10vh;
+  left: -5vw;
+  text-align: right;
 
   h1 {
     font-size: 6vw;
@@ -16,7 +21,7 @@
 
   p {
     font-size: 3vw;
-    width: 53%;
+    /* width: 53%; */
   }
 }
 
