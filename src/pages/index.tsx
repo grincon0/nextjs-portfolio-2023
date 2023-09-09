@@ -22,8 +22,8 @@ export default function Home() {
       <NavBar />
       <main>
         <Hero />
-        <Work />
-        <Projects />
+{/*         <Work />
+        <Projects /> */}
       </main>
     </>
   )

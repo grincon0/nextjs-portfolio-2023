@@ -1,15 +1,16 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState, useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "./Loader";
-import viewportDimensions from '@/helpers/getViewportDimensions'
+import Stars from "./Stars";
+import viewportDimensions from '@/helpers/getViewportDimensions';
+import * as THREE from 'three';
 
 const Palm = ({ isMobile }) => {
   const palm = useGLTF("./assets/palm/scene.gltf");
-
   return (
     <mesh>
-{/*       <hemisphereLight intensity={0.5} skyColor="#ffffff" groundColor="#999999" />
+      {/*       <hemisphereLight intensity={0.5} skyColor="#ffffff" groundColor="#999999" />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.25}
@@ -20,7 +21,7 @@ const Palm = ({ isMobile }) => {
       />
       <pointLight intensity={0.5} /> */}
       <hemisphereLight intensity={0.8} groundColor='black' />
-{/*       <spotLight
+      {/*       <spotLight
         position={[150, 200, 20]}
         angle={0.3}
         penumbra={.5}
@@ -43,6 +44,7 @@ const getViewportSizes = () => {
 
 const PalmCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const textureLoader = new THREE.TextureLoader();
 
   useEffect(() => {
     // Add a listener for changes to the screen size
@@ -67,14 +69,22 @@ const PalmCanvas = () => {
     };
   }, []);
 
+  const backgroundTexture = useMemo(() => {
+    if (typeof document !== 'undefined') {
+      // do something with document
+      textureLoader.load('./assets/images/space.jpeg');
+    }
+  }, []);
+
   return (
     <Canvas
       frameloop='demand'
       shadows
       dpr={[1, 2]}
-      camera={{ position: [50, 10, 20], fov: 12, near: 1, far: 100 }}
+      camera={{ position: [50, 10, 20], fov: 12, near: 1, far: 10000 }}
       gl={{ preserveDrawingBuffer: true }}
-      style={{height: '100vh', width:'100vw', marginTop: '20vw'}}
+      style={{ height: '100vh', width: '100vw', marginTop: '20vw' }}
+      background={backgroundTexture}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
@@ -86,6 +96,7 @@ const PalmCanvas = () => {
           rotation={[(-Math.PI / 2), 0, 0]}
         />
         <Palm isMobile={isMobile} />
+        <Stars />
       </Suspense>
       <Preload all />
     </Canvas>

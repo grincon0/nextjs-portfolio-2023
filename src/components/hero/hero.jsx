@@ -2,6 +2,8 @@ import styles from './hero.module.scss';
 import Image from 'next/image';
 import ComputerCanvas from '@/components/canvas/Computer';
 import PalmCanvas from '@/components/canvas/Palm';
+import SpaceCanvas from '@/components/canvas/SpaceTest';
+import SphereScene from '@/components/canvas/SphereScene';
 
 export default function Hero() {
   const additionalClasses = 'c-flex flex-column full-width-vw';
@@ -12,7 +14,9 @@ export default function Hero() {
         <h1>Hi, I'm <span style={{color: '#32ad53'}}>George</span></h1>
         <p>I bring ideas to life</p>
       </div>
-      <PalmCanvas />
+    {/*   <SpaceCanvas /> */}
+      {/* <SphereScene /> */}
+{/*       <PalmCanvas /> */}
       {/* <ComputerCanvas /> */}
     </div>
   );
